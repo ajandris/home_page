@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Andris Jancevskis | Home — AI & ML Specialist{% endblock %}
+
+{% block content %}
+<div class="w3-content w3-container" style="max-width: 1200px;">
+
+  <!-- Hero Section -->
+  <div class="cyber-card pulse-cyan" style="padding: 48px 36px; margin-top: 20px; border-radius: 16px; position: relative;">
+    <div class="w3-row-padding" style="display: flex; align-items: center; flex-wrap: wrap;">
+      
+      <div class="w3-col l8 m12">
+        <div class="cyber-tag text-neon-cyan" style="margin-bottom: 12px;">
+          <i class="fa-solid fa-bolt w3-margin-right"></i>DEVELOPING AI & ML PRACTITIONER
+        </div>
+        <h1 style="font-size: 2.8rem; margin: 10px 0; font-weight: 900; line-height: 1.2;">
+          ANDRIS <span class="text-neon-cyan">JANCEVSKIS</span>
+        </h1>
+        <h3 class="text-neon-magenta" style="font-size: 1.3rem; margin-bottom: 20px;">
+          AI Agents • Machine Learning • Generative AI • Web Application Engineering
+        </h3>
+        <p class="text-muted" style="font-size: 1.05rem; line-height: 1.7; max-width: 750px;">
+          Computing graduate and experienced IT professional specializing in turning complex business problems into functional, AI-enabled software solutions, intelligent agents, and web applications.
+        </p>
+
+        <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 28px;">
+          <a href="{% url 'pages:skills' lang=lang %}" class="cyber-btn">
+            <i class="fa-solid fa-microchip w3-margin-right"></i>Explore Skills Profile
+          </a>
+          <a href="{% url 'pages:sales_funnel' lang=lang %}" class="cyber-btn cyber-btn-magenta">
+            <i class="fa-solid fa-calculator w3-margin-right"></i>Services & ROI Funnel
+          </a>
+          <a href="{% url 'pages:chat' lang=lang %}" class="cyber-btn cyber-btn-outline">
+            <i class="fa-solid fa-comments w3-margin-right"></i>Chat with AI Bot
+          </a>
+        </div>
+      </div>
+
+      <div class="w3-col l4 m12 w3-center" style="margin-top: 24px;">
+        <div class="cyber-card" style="padding: 24px; border-color: var(--neon-cyan); background: rgba(5, 10, 25, 0.9);">
+          <div style="font-size: 3rem; color: var(--neon-cyan); margin-bottom: 10px;">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <div class="font-subheading text-neon-green" style="font-size: 1.1rem; margin-bottom: 6px;">LOCATION</div>
+          <div style="color: #fff; font-size: 1rem; margin-bottom: 16px;">Burton-on-Trent, United Kingdom</div>
+          
+          <div class="font-subheading text-neon-magenta" style="font-size: 0.9rem; margin-bottom: 6px;">CORE STACK</div>
+          <div style="display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;">
+            <span class="cyber-tag text-neon-cyan">Python</span>
+            <span class="cyber-tag text-neon-cyan">Django</span>
+            <span class="cyber-tag text-neon-magenta">AI Agents</span>
+            <span class="cyber-tag text-neon-green">Scikit-Learn</span>
+            <span class="cyber-tag text-neon-purple">SQL</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Key Metrics Bar -->
+  <div class="w3-row-padding" style="margin-top: 40px;">
+    <div class="w3-col l3 m6 s12 w3-margin-bottom">
+      <div class="cyber-card w3-center" style="padding: 20px;">
+        <div class="text-neon-cyan" style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-heading);">7+</div>
+        <div class="font-subheading text-muted" style="font-size: 0.85rem;">Qualifications & Degrees</div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 s12 w3-margin-bottom">
+      <div class="cyber-card w3-center" style="padding: 20px;">
+        <div class="text-neon-magenta" style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-heading);">100%</div>
+        <div class="font-subheading text-muted" style="font-size: 0.85rem;">Practical AI/ML Focus</div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 s12 w3-margin-bottom">
+      <div class="cyber-card w3-center" style="padding: 20px;">
+        <div class="text-neon-green" style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-heading);">PgDip</div>
+        <div class="font-subheading text-muted" style="font-size: 0.85rem;">Computer Science & Big Data</div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 s12 w3-margin-bottom">
+      <div class="cyber-card w3-center" style="padding: 20px;">
+        <div class="text-neon-purple" style="font-size: 2.2rem; font-weight: 800; font-family: var(--font-heading);">WMS Domain</div>
+        <div class="font-subheading text-muted" style="font-size: 0.85rem;">Domain Systems Analysis</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature Grid Section -->
+  <div style="margin-top: 40px;">
+    <div class="w3-center w3-margin-bottom">
+      <h2 class="text-neon-cyan"><i class="fa-solid fa-cubes w3-margin-right"></i>SYSTEM ARCHITECTURE & CAPABILITIES</h2>
+      <p class="text-muted" style="max-width: 650px; margin: auto;">
+        Combining deep software engineering and systems analysis with modern AI Agent and Machine Learning paradigms.
+      </p>
+    </div>
+
+    <div class="w3-row-padding" style="margin-top: 20px;">
+      
+      <!-- Card 1: Skills -->
+      <div class="w3-col l6 m12 w3-margin-bottom">
+        <div class="cyber-card" style="padding: 28px; height: 100%;">
+          <div style="font-size: 2rem; color: var(--neon-cyan); margin-bottom: 12px;">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <h3 class="text-neon-cyan" style="font-size: 1.4rem;">Skills & Profile Summary</h3>
+          <p class="text-muted" style="line-height: 1.6;">
+            Summarized directly from standard study documentation: AI/ML model development, agentic workflows, prompt engineering, big data analytics, and Django full-stack web engineering.
+          </p>
+          <a href="{% url 'pages:skills' lang=lang %}" class="cyber-btn-outline" style="margin-top: 14px;">
+            View Detailed Profile <i class="fa-solid fa-arrow-right w3-margin-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: Portfolio -->
+      <div class="w3-col l6 m12 w3-margin-bottom">
+        <div class="cyber-card cyber-card-magenta" style="padding: 28px; height: 100%;">
+          <div style="font-size: 2rem; color: var(--neon-magenta); margin-bottom: 12px;">
+            <i class="fa-solid fa-diagram-project"></i>
+          </div>
+          <h3 class="text-neon-magenta" style="font-size: 1.4rem;">Portfolio & Showcase</h3>
+          <p class="text-muted" style="line-height: 1.6;">
+            Interactive showcase of AI agent prototypes, predictive machine learning pipelines, vibe coding web applications, and warehouse operational decision tools.
+          </p>
+          <a href="{% url 'pages:portfolio' lang=lang %}" class="cyber-btn-outline" style="margin-top: 14px; border-color: var(--neon-magenta); color: var(--neon-magenta) !important;">
+            Explore Portfolio <i class="fa-solid fa-arrow-right w3-margin-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3: Sales Funnel -->
+      <div class="w3-col l6 m12 w3-margin-bottom">
+        <div class="cyber-card" style="padding: 28px; height: 100%;">
+          <div style="font-size: 2rem; color: var(--neon-green); margin-bottom: 12px;">
+            <i class="fa-solid fa-filter-circle-dollar"></i>
+          </div>
+          <h3 class="text-neon-green" style="font-size: 1.4rem;">Services & Sales Funnel</h3>
+          <p class="text-muted" style="line-height: 1.6;">
+            Interactive 4-step wizard to evaluate AI automation needs, select tailored solution packages (Starter Prototype, Agent Suite, Enterprise AI Web App), and calculate estimated ROI.
+          </p>
+          <a href="{% url 'pages:sales_funnel' lang=lang %}" class="cyber-btn-outline" style="margin-top: 14px; border-color: var(--neon-green); color: var(--neon-green) !important;">
+            Start Solution Wizard <i class="fa-solid fa-arrow-right w3-margin-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 4: Bot Chat -->
+      <div class="w3-col l6 m12 w3-margin-bottom">
+        <div class="cyber-card" style="padding: 28px; height: 100%;">
+          <div style="font-size: 2rem; color: var(--neon-purple); margin-bottom: 12px;">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <h3 class="text-neon-purple" style="font-size: 1.4rem;">Cyber AI Bot Chat</h3>
+          <p class="text-muted" style="line-height: 1.6;">
+            Interactive client-side AI agent simulation loaded with knowledge about Andris's qualifications, technical capabilities, studies, domain background, and contact options.
+          </p>
+          <a href="{% url 'pages:chat' lang=lang %}" class="cyber-btn-outline" style="margin-top: 14px; border-color: var(--neon-purple); color: var(--neon-purple) !important;">
+            Launch AI Bot Chat <i class="fa-solid fa-arrow-right w3-margin-left"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+{% endblock %}

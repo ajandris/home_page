@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="{{ lang|default:'en' }}">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Andris Jancevskis — Personal AI & Machine Learning Profile, Portfolio, AI Agent Solutions, and Systems Analysis Expertise.">
+  <meta name="author" content="Andris Jancevskis">
+  <title>{% block title %}Andris Jancevskis | AI & Machine Learning Specialist{% endblock %}</title>
+
+  <!-- W3.CSS Framework & Fallback -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+
+  <!-- Cyber Neon Theme -->
+  <link rel="stylesheet" href="{% static 'css/cyber_neon.css' %}">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+  <!-- Dynamic Particle Canvas -->
+  <canvas id="cyber-canvas"></canvas>
+
+  <!-- Cyber Navigation Bar -->
+  <nav class="cyber-navbar w3-top">
+    <div class="w3-content w3-container" style="max-width: 1300px; padding: 12px 16px;">
+      <div class="w3-bar" style="display: flex; align-items: center; justify-content: space-between;">
+
+        <!-- Brand Logo & Title -->
+        <a href="{% url 'pages:home' lang=lang|default:'en' %}" class="cyber-brand">
+          <span class="cyber-brand-logo"></span>
+          <div>
+            <div>ANDRIS JANCEVSKIS</div>
+            <div
+              style="font-size: 0.65rem; color: var(--neon-cyan); letter-spacing: 2px; font-family: var(--font-subheading);">
+              AI & ML SPECIALIST</div>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="w3-hide-small w3-hide-medium" style="display: flex; align-items: center; gap: 8px;">
+          <a href="{% url 'pages:home' lang=lang|default:'en' %}"
+            class="cyber-nav-link {% if active_page == 'home' %}active{% endif %}">
+            <i class="fa-solid fa-house w3-margin-right"></i>Home
+          </a>
+          <a href="{% url 'pages:skills' lang=lang|default:'en' %}"
+            class="cyber-nav-link {% if active_page == 'skills' %}active{% endif %}">
+            <i class="fa-solid fa-microchip w3-margin-right"></i>Skills & Profile
+          </a>
+          <a href="{% url 'pages:portfolio' lang=lang|default:'en' %}"
+            class="cyber-nav-link {% if active_page == 'portfolio' %}active{% endif %}">
+            <i class="fa-solid fa-diagram-project w3-margin-right"></i>Portfolio
+          </a>
+          <a href="{% url 'pages:sales_funnel' lang=lang|default:'en' %}"
+            class="cyber-nav-link {% if active_page == 'sales_funnel' %}active{% endif %}">
+            <i class="fa-solid fa-filter-circle-dollar w3-margin-right"></i>Services & Funnel
+          </a>
+          <a href="{% url 'pages:chat' lang=lang|default:'en' %}"
+            class="cyber-nav-link {% if active_page == 'chat' %}active{% endif %}">
+            <i class="fa-solid fa-robot w3-margin-right"></i>Cyber AI Bot
+          </a>
+
+          <!-- Language Selector -->
+          <div class="w3-dropdown-hover" style="background: transparent;">
+            <a href="#" class="lang-badge">
+              <i class="fa-solid fa-globe w3-margin-right"></i>{{ lang|default:'en'|upper }}
+            </a>
+            <div class="w3-dropdown-content w3-bar-block cyber-card" style="min-width: 100px; right: 0;">
+              <a href="{% url 'pages:home' lang='en' %}" class="w3-bar-item w3-button text-neon-cyan">EN (English)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Nav Hamburger Button -->
+        <button id="nav-toggle" class="w3-button w3-hide-large text-neon-cyan" style="font-size: 1.4rem;">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-nav" class="w3-bar-block w3-hide w3-hide-large cyber-card"
+        style="margin-top: 10px; border-radius: 8px;">
+        <a href="{% url 'pages:home' lang=lang|default:'en' %}"
+          class="w3-bar-item cyber-nav-link {% if active_page == 'home' %}active{% endif %}">
+          <i class="fa-solid fa-house w3-margin-right"></i>Home
+        </a>
+        <a href="{% url 'pages:skills' lang=lang|default:'en' %}"
+          class="w3-bar-item cyber-nav-link {% if active_page == 'skills' %}active{% endif %}">
+          <i class="fa-solid fa-microchip w3-margin-right"></i>Skills & Profile
+        </a>
+        <a href="{% url 'pages:portfolio' lang=lang|default:'en' %}"
+          class="w3-bar-item cyber-nav-link {% if active_page == 'portfolio' %}active{% endif %}">
+          <i class="fa-solid fa-diagram-project w3-margin-right"></i>Portfolio
+        </a>
+        <a href="{% url 'pages:sales_funnel' lang=lang|default:'en' %}"
+          class="w3-bar-item cyber-nav-link {% if active_page == 'sales_funnel' %}active{% endif %}">
+          <i class="fa-solid fa-filter-circle-dollar w3-margin-right"></i>Services & Funnel
+        </a>
+        <a href="{% url 'pages:chat' lang=lang|default:'en' %}"
+          class="w3-bar-item cyber-nav-link {% if active_page == 'chat' %}active{% endif %}">
+          <i class="fa-solid fa-robot w3-margin-right"></i>Cyber AI Bot
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content Container -->
+  <main style="padding-top: 40px;">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Cyber Footer -->
+  <footer class="cyber-footer">
+    <div class="w3-content w3-container" style="max-width: 1200px;">
+      <div class="w3-row-padding">
+
+        <!-- About Column -->
+        <div class="w3-col l5 m12 w3-margin-bottom">
+          <h4 class="text-neon-cyan"><i class="fa-solid fa-brain w3-margin-right"></i>Andris Jancevskis</h4>
+          <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">
+            Computing graduate and experienced IT professional currently specializing in artificial intelligence,
+            machine learning, generative AI, AI agents, and AI-assisted web application engineering.
+          </p>
+          <div style="display: flex; gap: 12px; margin-top: 16px;">
+            <a href="mailto:andris.jancevskis@gmail.com" class="cyber-btn-outline"
+              style="padding: 6px 14px; font-size: 0.8rem;">
+              <i class="fa-solid fa-envelope w3-margin-right"></i>Email
+            </a>
+            <a href="tel:+447752194449" class="cyber-btn-outline" style="padding: 6px 14px; font-size: 0.8rem;">
+              <i class="fa-solid fa-phone w3-margin-right"></i>Call
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <h5 class="text-neon-magenta">Navigation</h5>
+          <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+            <li style="margin-bottom: 8px;">
+              <a href="{% url 'pages:home' lang=lang|default:'en' %}" class="text-muted" style="text-decoration: none;">
+                <i class="fa-solid fa-angle-right text-neon-cyan w3-margin-right"></i>Home Overview
+              </a>
+            </li>
+            <li style="margin-bottom: 8px;">
+              <a href="{% url 'pages:skills' lang=lang|default:'en' %}" class="text-muted"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-angle-right text-neon-cyan w3-margin-right"></i>Skills & Profile Summary
+              </a>
+            </li>
+            <li style="margin-bottom: 8px;">
+              <a href="{% url 'pages:portfolio' lang=lang|default:'en' %}" class="text-muted"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-angle-right text-neon-cyan w3-margin-right"></i>Portfolio & Prototypes
+              </a>
+            </li>
+            <li style="margin-bottom: 8px;">
+              <a href="{% url 'pages:sales_funnel' lang=lang|default:'en' %}" class="text-muted"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-angle-right text-neon-cyan w3-margin-right"></i>Service Acquisition Funnel
+              </a>
+            </li>
+            <li style="margin-bottom: 8px;">
+              <a href="{% url 'pages:chat' lang=lang|default:'en' %}" class="text-muted" style="text-decoration: none;">
+                <i class="fa-solid fa-angle-right text-neon-cyan w3-margin-right"></i>Interactive Bot Chat
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Key Qualifications -->
+        <div class="w3-col l4 m6 w3-margin-bottom">
+          <h5 class="text-neon-green">Credentials</h5>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">
+            <div style="margin-bottom: 6px;"><i class="fa-solid fa-certificate text-neon-cyan w3-margin-right"></i>AI
+              Agents Developer — AI Institute</div>
+            <div style="margin-bottom: 6px;"><i
+                class="fa-solid fa-certificate text-neon-cyan w3-margin-right"></i>Google AI Professional Certificate —
+              Coursera</div>
+            <div style="margin-bottom: 6px;"><i
+                class="fa-solid fa-graduation-cap text-neon-magenta w3-margin-right"></i>PgDip Computer Science with Big
+              Data Analytics — Wrexham Glyndwr</div>
+            <div style="margin-bottom: 6px;"><i
+                class="fa-solid fa-graduation-cap text-neon-magenta w3-margin-right"></i>Level 5 Web Application Dev —
+              Code Institute</div>
+            <div style="margin-bottom: 6px;"><i
+                class="fa-solid fa-graduation-cap text-neon-purple w3-margin-right"></i>BSc (Hons) Computing & IT
+              (Software) — Open University</div>
+          </div>
+        </div>
+      </div>
+
+      <hr style="border-color: rgba(255,255,255,0.08); margin: 20px 0;">
+
+      <div class="w3-center" style="font-size: 0.8rem; color: var(--text-muted);">
+        © 2026 Andris Jancevskis. Built with Django Templates, w3.css, and AI Neon Theme. Burton-on-Trent, UK.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="{% static 'js/main.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+
+</html>

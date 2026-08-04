@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Portfolio | Andris Jancevskis — AI & ML Projects{% endblock %}
+
+{% block content %}
+<div class="w3-content w3-container" style="max-width: 1200px;">
+
+  <!-- Header -->
+  <div class="w3-center w3-margin-top" style="margin-bottom: 30px;">
+    <span class="cyber-tag text-neon-magenta"><i class="fa-solid fa-layer-group w3-margin-right"></i>PROJECT SHOWCASE</span>
+    <h1 class="text-neon-cyan" style="font-size: 2.5rem; margin-top: 8px;">AI & SOFTWARE PORTFOLIO</h1>
+    <p class="text-muted" style="max-width: 700px; margin: auto; font-size: 1rem;">
+      Practical AI agent workflows, machine learning models, vibe-coded web applications, and data analytics solutions.
+    </p>
+
+    <!-- Filter Buttons -->
+    <div style="margin-top: 24px;">
+      <span class="cyber-tag skill-filter-tag active" data-filter="all">All Projects</span>
+      <span class="cyber-tag skill-filter-tag" data-filter="agents">AI Agents</span>
+      <span class="cyber-tag skill-filter-tag" data-filter="ml">Machine Learning</span>
+      <span class="cyber-tag skill-filter-tag" data-filter="web">Web Apps (Django)</span>
+      <span class="cyber-tag skill-filter-tag" data-filter="vibe">Vibe Coding</span>
+    </div>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="w3-row-padding">
+    
+    <!-- Project 1: WMS Exception Agent -->
+    <div class="w3-col l6 m12 w3-margin-bottom skill-card" data-category="agents web">
+      <div class="cyber-card" style="padding: 24px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+            <span class="cyber-tag text-neon-cyan"><i class="fa-solid fa-robot w3-margin-right"></i>AI AGENTS</span>
+            <span class="text-muted" style="font-size: 0.8rem;">Django • Python • SQL</span>
+          </div>
+          <h3 class="text-neon-cyan" style="font-size: 1.35rem; margin-bottom: 10px;">Intelligent WMS Exception Agent</h3>
+          <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">
+            Goal-driven AI agent that monitors warehouse stock variance logs, executes diagnostic SQL tools, identifies root-cause discrepancies, and generates automated resolution workflows with human approval checkpoints.
+          </p>
+        </div>
+        <div style="margin-top: 20px;">
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px;">
+            <span class="cyber-tag">Agentic Architecture</span>
+            <span class="cyber-tag">Tool Use</span>
+            <span class="cyber-tag">Guardrails</span>
+            <span class="cyber-tag">Warehouse WMS</span>
+          </div>
+          <button class="cyber-btn-outline" style="width: 100%; font-size: 0.85rem;" data-modal-target="modal-project-1">
+            <i class="fa-solid fa-circle-info w3-margin-right"></i>Inspect Architecture & Case Study
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2: Predictive Demand ML Pipeline -->
+    <div class="w3-col l6 m12 w3-margin-bottom skill-card" data-category="ml data">
+      <div class="cyber-card cyber-card-magenta" style="padding: 24px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+            <span class="cyber-tag text-neon-magenta"><i class="fa-solid fa-chart-line w3-margin-right"></i>MACHINE LEARNING</span>
+            <span class="text-muted" style="font-size: 0.8rem;">Python • Scikit-Learn • Pandas</span>
+          </div>
+          <h3 class="text-neon-magenta" style="font-size: 1.35rem; margin-bottom: 10px;">Predictive Inventory Demand Pipeline</h3>
+          <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">
+            Supervised machine-learning regression pipeline designed to predict seasonal inventory reorder levels, clean noisy operational datasets, evaluate cross-validation error metrics, and prevent warehouse stockouts.
+          </p>
+        </div>
+        <div style="margin-top: 20px;">
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px;">
+            <span class="cyber-tag">Regression</span>
+            <span class="cyber-tag">EDA & Data Prep</span>
+            <span class="cyber-tag">Model Evaluation</span>
+            <span class="cyber-tag">Scikit-Learn</span>
+          </div>
+          <button class="cyber-btn-outline" style="width: 100%; font-size: 0.85rem; border-color: var(--neon-magenta); color: var(--neon-magenta) !important;" data-modal-target="modal-project-2">
+            <i class="fa-solid fa-circle-info w3-margin-right"></i>Inspect Architecture & Case Study
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3: VibeCoder AI Web Builder -->
+    <div class="w3-col l6 m12 w3-margin-bottom skill-card" data-category="vibe web">
+      <div class="cyber-card" style="padding: 24px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+            <span class="cyber-tag text-neon-green"><i class="fa-solid fa-wand-magic-sparkles w3-margin-right"></i>VIBE CODING</span>
+            <span class="text-muted" style="font-size: 0.8rem;">Django • HTML/CSS • Prompt Eng</span>
+          </div>
+          <h3 class="text-neon-green" style="font-size: 1.35rem; margin-bottom: 10px;">VibeCoder Rapid Prototype Builder</h3>
+          <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">
+            Prompt-driven application generator framework built with Django. Translates plain-English natural language product ideas into working web interface components and structured backend routes.
+          </p>
+        </div>
+        <div style="margin-top: 20px;">
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px;">
+            <span class="cyber-tag">Prompt Engineering</span>
+            <span class="cyber-tag">Rapid MVP</span>
+            <span class="cyber-tag">Django Framework</span>
+            <span class="cyber-tag">Google AI Cert</span>
+          </div>
+          <button class="cyber-btn-outline" style="width: 100%; font-size: 0.85rem; border-color: var(--neon-green); color: var(--neon-green) !important;" data-modal-target="modal-project-3">
+            <i class="fa-solid fa-circle-info w3-margin-right"></i>Inspect Architecture & Case Study
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 4: Big Data Analytics Dashboard -->
+    <div class="w3-col l6 m12 w3-margin-bottom skill-card" data-category="data web">
+      <div class="cyber-card" style="padding: 24px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+            <span class="cyber-tag text-neon-purple"><i class="fa-solid fa-database w3-margin-right"></i>BIG DATA ANALYTICS</span>
+            <span class="text-muted" style="font-size: 0.8rem;">PgDip • SQL • Big Data</span>
+          </div>
+          <h3 class="text-neon-purple" style="font-size: 1.35rem; margin-bottom: 10px;">Big Data Analytics Dashboard</h3>
+          <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">
+            Postgraduate capstone project developing high-throughput analytical query pipelines, relational database schemas, statistical visualizations, and analytical data insights.
+          </p>
+        </div>
+        <div style="margin-top: 20px;">
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px;">
+            <span class="cyber-tag">Big Data</span>
+            <span class="cyber-tag">PgDip Capstone</span>
+            <span class="cyber-tag">SQL & Relational</span>
+            <span class="cyber-tag">Data Analytics</span>
+          </div>
+          <button class="cyber-btn-outline" style="width: 100%; font-size: 0.85rem; border-color: var(--neon-purple); color: var(--neon-purple) !important;" data-modal-target="modal-project-4">
+            <i class="fa-solid fa-circle-info w3-margin-right"></i>Inspect Architecture & Case Study
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Modal 1 -->
+<div id="modal-project-1" class="w3-modal">
+  <div class="w3-modal-content cyber-card" style="padding: 28px; border-color: var(--neon-cyan); background: rgba(10,15,30,0.98);">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 class="text-neon-cyan" style="margin: 0;">Intelligent WMS Exception Agent</h3>
+      <span class="close-modal" style="cursor: pointer; font-size: 1.5rem; color: var(--neon-cyan);">&times;</span>
+    </div>
+    <div style="color: var(--text-main); font-size: 0.95rem; line-height: 1.6;">
+      <h5 class="text-neon-magenta">Challenge & Background</h5>
+      <p class="text-muted">High-volume warehouses experience stock discrepancies during inbound receiving and despatch. Traditional manual investigation takes hours of database querying.</p>
+      
+      <h5 class="text-neon-green">AI Agent Architecture</h5>
+      <p class="text-muted">The agent receives a goal prompt (e.g. "Resolve SKU-9908 discrepancy"), decomposes the workflow into sub-tasks, queries SQL databases via defined tool schemas, identifies mismatch patterns, and outputs a formatted action plan for warehouse manager approval.</p>
+
+      <h5 class="text-neon-cyan">Technologies Used</h5>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <span class="cyber-tag text-neon-cyan">Python</span>
+        <span class="cyber-tag text-neon-cyan">Django</span>
+        <span class="cyber-tag text-neon-cyan">AI Agent Framework</span>
+        <span class="cyber-tag text-neon-cyan">PostgreSQL</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2 -->
+<div id="modal-project-2" class="w3-modal">
+  <div class="w3-modal-content cyber-card" style="padding: 28px; border-color: var(--neon-magenta); background: rgba(10,15,30,0.98);">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 class="text-neon-magenta" style="margin: 0;">Predictive Inventory Demand Pipeline</h3>
+      <span class="close-modal" style="cursor: pointer; font-size: 1.5rem; color: var(--neon-magenta);">&times;</span>
+    </div>
+    <div style="color: var(--text-main); font-size: 0.95rem; line-height: 1.6;">
+      <h5 class="text-neon-cyan">Challenge & Objective</h5>
+      <p class="text-muted">Traditional static reorder points fail during demand spikes. This pipeline applies supervised machine learning to forecast order volume based on historical trends and seasonal features.</p>
+      
+      <h5 class="text-neon-green">Machine Learning Implementation</h5>
+      <p class="text-muted">Includes exploratory data analysis (EDA), handling missing warehouse records, feature scaling, model fitting (Linear/Ridge regression, Random Forest), and evaluation with RMSE and R² metrics.</p>
+
+      <h5 class="text-neon-magenta">Technologies Used</h5>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <span class="cyber-tag text-neon-magenta">Python</span>
+        <span class="cyber-tag text-neon-magenta">Scikit-Learn</span>
+        <span class="cyber-tag text-neon-magenta">Pandas & NumPy</span>
+        <span class="cyber-tag text-neon-magenta">Matplotlib</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div id="modal-project-3" class="w3-modal">
+  <div class="w3-modal-content cyber-card" style="padding: 28px; border-color: var(--neon-green); background: rgba(10,15,30,0.98);">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 class="text-neon-green" style="margin: 0;">VibeCoder Rapid Prototype Builder</h3>
+      <span class="close-modal" style="cursor: pointer; font-size: 1.5rem; color: var(--neon-green);">&times;</span>
+    </div>
+    <div style="color: var(--text-main); font-size: 0.95rem; line-height: 1.6;">
+      <h5 class="text-neon-cyan">Vibe Coding Concept</h5>
+      <p class="text-muted">Demonstrates rapid prototyping by translating high-level user natural language requirements into clean HTML/CSS views and Django routing configurations.</p>
+      
+      <h5 class="text-neon-purple">Human Oversight & Code Quality</h5>
+      <p class="text-muted">Integrates mandatory code review checkpoints to ensure generated code strictly adheres to security, sanitization, and performance standards.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4 -->
+<div id="modal-project-4" class="w3-modal">
+  <div class="w3-modal-content cyber-card" style="padding: 28px; border-color: var(--neon-purple); background: rgba(10,15,30,0.98);">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 class="text-neon-purple" style="margin: 0;">Big Data Analytics Dashboard</h3>
+      <span class="close-modal" style="cursor: pointer; font-size: 1.5rem; color: var(--neon-purple);">&times;</span>
+    </div>
+    <div style="color: var(--text-main); font-size: 0.95rem; line-height: 1.6;">
+      <h5 class="text-neon-cyan">Postgraduate Project Summary</h5>
+      <p class="text-muted">Developed as part of the MSc / Postgraduate Diploma in Computer Science with Big Data Analytics at Wrexham Glyndwr University. Features complex SQL aggregation, data warehousing schemas, and operational reporting insights.</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

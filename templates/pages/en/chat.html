@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Cyber AI Bot Chat | Andris Jancevskis{% endblock %}
+
+{% block content %}
+<div class="w3-content w3-container" style="max-width: 1000px;">
+
+  <!-- Header -->
+  <div class="w3-center w3-margin-top" style="margin-bottom: 24px;">
+    <span class="cyber-tag text-neon-purple"><i class="fa-solid fa-headset w3-margin-right"></i>OFFLINE AI ASSISTANT</span>
+    <h1 class="text-neon-cyan" style="font-size: 2.2rem; margin-top: 8px;">CYBERNEXUS AI BOT CHAT</h1>
+    <p class="text-muted" style="max-width: 600px; margin: auto; font-size: 0.95rem;">
+      Ask questions about Andris Jancevskis's qualifications, AI agent development skills, machine learning study priorities, and project experience.
+    </p>
+  </div>
+
+  <!-- Chat Window Box -->
+  <div class="chat-container">
+    
+    <!-- Chat Header -->
+    <div class="chat-header">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span class="cyber-brand-logo" style="width: 24px; height: 24px;"></span>
+        <div>
+          <div style="font-family: var(--font-heading); font-size: 0.95rem; color: var(--neon-cyan);">CYBERNEXUS ASSISTANT v2.6</div>
+          <div style="font-size: 0.7rem; color: var(--neon-green); font-family: var(--font-subheading);">● ONLINE (Profile Knowledge Base)</div>
+        </div>
+      </div>
+      
+      <button id="clear-chat-btn" class="cyber-btn-outline" style="padding: 4px 12px; font-size: 0.75rem; border-color: rgba(255,255,255,0.2); color: var(--text-muted) !important;">
+        <i class="fa-solid fa-trash w3-margin-right"></i>Reset Chat
+      </button>
+    </div>
+
+    <!-- Messages Window -->
+    <div class="chat-messages" id="chat-messages">
+      <!-- Initial Bot Welcome Message -->
+      <div class="message-bubble message-bot">
+        Greetings! I am <strong>CyberNexus AI Assistant</strong> representing <strong>Andris Jancevskis</strong>.<br><br>
+        I can answer questions regarding Andris's qualifications, AI agent & ML skills, web application engineering background, and contact details.<br><br>
+        <em>Try clicking one of the suggested prompts below to get started!</em>
+      </div>
+    </div>
+
+    <!-- Quick Prompt Pills -->
+    <div style="padding: 10px 16px; background: rgba(5, 7, 14, 0.95); border-top: 1px solid rgba(0, 243, 255, 0.15); display: flex; gap: 8px; overflow-x: auto; white-space: nowrap;">
+      <span class="cyber-tag prompt-pill" data-prompt="What are Andris's qualifications?">🎓 Qualifications & Degrees</span>
+      <span class="cyber-tag prompt-pill" data-prompt="Explain his AI agent capabilities">🤖 AI Agent Skills</span>
+      <span class="cyber-tag prompt-pill" data-prompt="Show technical skills & stack">💻 Tech Stack & Python</span>
+      <span class="cyber-tag prompt-pill" data-prompt="What is his warehouse WMS experience?">🏭 Warehouse Domain</span>
+      <span class="cyber-tag prompt-pill" data-prompt="Contact information & email">📧 Contact Info</span>
+    </div>
+
+    <!-- Input Bar -->
+    <div class="chat-input-area">
+      <input type="text" id="chat-input" class="chat-input" placeholder="Type a question about Andris's profile or AI skills..." autocomplete="off">
+      <button id="chat-send-btn" class="cyber-btn" style="padding: 10px 20px;">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/chat.js' %}"></script>
+{% endblock %}

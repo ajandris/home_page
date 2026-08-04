@@ -1,0 +1,258 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}AI Skill Match & Sales Funnel | Andris Jancevskis{% endblock %}
+
+{% block content %}
+<div class="w3-content w3-container" style="max-width: 1100px;">
+
+  <!-- Header -->
+  <div class="w3-center w3-margin-top" style="margin-bottom: 30px;">
+    <span class="cyber-tag text-neon-green"><i class="fa-solid fa-wand-magic-sparkles w3-margin-right"></i>REQUIREMENTS & AI PROMPT GENERATOR</span>
+    <h1 class="text-neon-cyan" style="font-size: 2.4rem; margin-top: 8px;">AI SKILL MATCH & SERVICE FUNNEL</h1>
+    <p class="text-muted" style="max-width: 700px; margin: auto;">
+      Specify your project type and required skills. Our AI engine will construct a tailored requirement prompt, analyze skill compatibility, and generate a customized action plan.
+    </p>
+
+    <!-- Funnel Progress Indicators -->
+    <div class="w3-row-padding" style="margin-top: 24px;">
+      <div class="w3-col l3 m3 s6 w3-margin-bottom">
+        <div class="funnel-progress-step active" id="pstep-1">1. Project Type</div>
+      </div>
+      <div class="w3-col l3 m3 s6 w3-margin-bottom">
+        <div class="funnel-progress-step" id="pstep-2">2. Required Skills</div>
+      </div>
+      <div class="w3-col l3 m3 s6 w3-margin-bottom">
+        <div class="funnel-progress-step" id="pstep-3">3. Project Scope</div>
+      </div>
+      <div class="w3-col l3 m3 s6 w3-margin-bottom">
+        <div class="funnel-progress-step" id="pstep-4">4. AI Match & Prompt</div>
+      </div>
+    </div>
+  </div>
+
+  <form id="funnel-form">
+    {% csrf_token %}
+
+    <!-- Step 1: Project Type Selection -->
+    <div class="funnel-step active" id="funnel-step-1">
+      <div class="cyber-card" style="padding: 32px;">
+        <h3 class="text-neon-cyan" style="margin-bottom: 20px;"><i class="fa-solid fa-cubes w3-margin-right"></i>Step 1: What Kind of Project Are You Looking For?</h3>
+        
+        <div class="w3-row-padding">
+          <div class="w3-col l6 m12 w3-margin-bottom">
+            <div class="cyber-card objective-card cyber-card-magenta active-selection" style="padding: 20px; cursor: pointer;">
+              <input type="radio" name="project_type" value="AI Agent & Workflow Automation" checked style="display:none;">
+              <h4 class="text-neon-magenta"><i class="fa-solid fa-robot w3-margin-right"></i>AI Agent & Workflow Automation</h4>
+              <p class="text-muted" style="font-size: 0.88rem;">Autonomous agents executing task workflows, API calls, database queries, and report generation.</p>
+            </div>
+          </div>
+
+          <div class="w3-col l6 m12 w3-margin-bottom">
+            <div class="cyber-card objective-card" style="padding: 20px; cursor: pointer;">
+              <input type="radio" name="project_type" value="Full-Stack Django AI Web Application" style="display:none;">
+              <h4 class="text-neon-cyan"><i class="fa-solid fa-globe w3-margin-right"></i>Full-Stack Django AI Web Application</h4>
+              <p class="text-muted" style="font-size: 0.88rem;">Custom Python Django web portal exposing machine learning models, database integration, and responsive UX.</p>
+            </div>
+          </div>
+
+          <div class="w3-col l6 m12 w3-margin-bottom">
+            <div class="cyber-card objective-card" style="padding: 20px; cursor: pointer;">
+              <input type="radio" name="project_type" value="Predictive Machine Learning & Data Pipeline" style="display:none;">
+              <h4 class="text-neon-green"><i class="fa-solid fa-chart-line w3-margin-right"></i>Predictive ML & Data Pipeline</h4>
+              <p class="text-muted" style="font-size: 0.88rem;">Data cleaning, feature engineering, classification/regression training, and model evaluation metrics.</p>
+            </div>
+          </div>
+
+          <div class="w3-col l6 m12 w3-margin-bottom">
+            <div class="cyber-card objective-card" style="padding: 20px; cursor: pointer;">
+              <input type="radio" name="project_type" value="Rapid Vibe Coding Prototype" style="display:none;">
+              <h4 class="text-neon-purple"><i class="fa-solid fa-wand-magic-sparkles w3-margin-right"></i>Rapid Vibe Coding Software MVP</h4>
+              <p class="text-muted" style="font-size: 0.88rem;">Prompt-driven rapid development to transform product ideas into working software prototypes in days.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2: Required Skills Selection -->
+    <div class="funnel-step" id="funnel-step-2">
+      <div class="cyber-card" style="padding: 32px;">
+        <h3 class="text-neon-magenta" style="margin-bottom: 20px;"><i class="fa-solid fa-sliders w3-margin-right"></i>Step 2: What Specific Skills Do You Require?</h3>
+        <p class="text-muted" style="margin-bottom: 20px; font-size: 0.9rem;">Select all technical capabilities required for your project:</p>
+
+        <div class="w3-row-padding">
+          
+          <div class="w3-col l4 m6 w3-margin-bottom">
+            <label class="cyber-card" style="display: block; padding: 14px 18px; cursor: pointer;">
+              <input type="checkbox" name="skills" value="Python Development" checked style="accent-color: var(--neon-cyan); margin-right: 8px;">
+              <span class="text-neon-cyan" style="font-weight: 600;">Python Programming</span>
+            </label>
+          </div>
+
+          <div class="w3-col l4 m6 w3-margin-bottom">
+            <label class="cyber-card" style="display: block; padding: 14px 18px; cursor: pointer;">
+              <input type="checkbox" name="skills" value="Django Web Framework" checked style="accent-color: var(--neon-cyan); margin-right: 8px;">
+              <span class="text-neon-cyan" style="font-weight: 600;">Django Web Framework</span>
+            </label>
+          </div>
+
+          <div class="w3-col l4 m6 w3-margin-bottom">
+            <label class="cyber-card" style="display: block; padding: 14px 18px; cursor: pointer;">
+              <input type="checkbox" name="skills" value="AI Agent Architecture & Tool Use" checked style="accent-color: var(--neon-magenta); margin-right: 8px;">
+              <span class="text-neon-magenta" style="font-weight: 600;">AI Agent Architecture</span>
+            </label>
+          </div>
+
+          <div class="w3-col l4 m6 w3-margin-bottom">
+            <label class="cyber-card" style="display: block; padding: 14px 18px; cursor: pointer;">
+              <input type="checkbox" name="skills" value="Machine Learning (Scikit-Learn)" checked style="accent-color: var(--neon-green); margin-right: 8px;">
+              <span class="text-neon-green" style="font-weight: 600;">Machine Learning (Scikit-Learn)</span>
+            </label>
+          </div>
+
+          <div class="w3-col l4 m6 w3-margin-bottom">
+            <label class="cyber-card" style="display: block; padding: 14px 18px; cursor: pointer;">
+              <input type="checkbox" name="skills" value="Prompt Engineering & Vibe Coding" style="accent-color: var(--neon-purple); margin-right: 8px;">
+              <span class="text-neon-purple" style="font-weight: 600;">Prompt Engineering</span>
+            </label>
+          </div>
+
+          <div class="w3-col l4 m6 w3-margin-bottom">
+            <label class="cyber-card" style="display: block; padding: 14px 18px; cursor: pointer;">
+              <input type="checkbox" name="skills" value="SQL Databases & Data Modelling" checked style="accent-color: var(--neon-amber); margin-right: 8px;">
+              <span class="text-neon-amber" style="font-weight: 600;">SQL Databases</span>
+            </label>
+          </div>
+
+          <div class="w3-col l4 m6 w3-margin-bottom">
+            <label class="cyber-card" style="display: block; padding: 14px 18px; cursor: pointer;">
+              <input type="checkbox" name="skills" value="Systems Analysis & Requirements" style="accent-color: var(--neon-cyan); margin-right: 8px;">
+              <span class="text-neon-cyan" style="font-weight: 600;">Systems Analysis</span>
+            </label>
+          </div>
+
+          <div class="w3-col l4 m6 w3-margin-bottom">
+            <label class="cyber-card" style="display: block; padding: 14px 18px; cursor: pointer;">
+              <input type="checkbox" name="skills" value="Warehouse WMS & Operations Domain" style="accent-color: var(--neon-magenta); margin-right: 8px;">
+              <span class="text-neon-magenta" style="font-weight: 600;">Warehouse/WMS Domain</span>
+            </label>
+          </div>
+
+          <div class="w3-col l4 m6 w3-margin-bottom">
+            <label class="cyber-card" style="display: block; padding: 14px 18px; cursor: pointer;">
+              <input type="checkbox" name="skills" value="Big Data Analytics" style="accent-color: var(--neon-green); margin-right: 8px;">
+              <span class="text-neon-green" style="font-weight: 600;">Big Data Analytics</span>
+            </label>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3: Project Scope & Description -->
+    <div class="funnel-step" id="funnel-step-3">
+      <div class="cyber-card" style="padding: 32px;">
+        <h3 class="text-neon-green" style="margin-bottom: 20px;"><i class="fa-solid fa-align-left w3-margin-right"></i>Step 3: Project Details & Goals</h3>
+        
+        <div style="margin-bottom: 20px;">
+          <label class="font-subheading text-neon-cyan" style="display: block; margin-bottom: 8px;">Describe Your Project Goals or Business Challenge</label>
+          <textarea id="project-description" name="description" rows="4" class="chat-input" placeholder="e.g. Need an AI agent system that monitors inventory discrepancies in real-time, queries SQL database logs, and suggests fixes to warehouse supervisors." style="width: 100%;"></textarea>
+        </div>
+
+        <div class="w3-row-padding">
+          <div class="w3-col l6 m12 w3-margin-bottom">
+            <label class="font-subheading text-neon-magenta" style="display: block; margin-bottom: 8px;">Target Delivery Timeline</label>
+            <select id="funnel-timeline" name="timeline" class="chat-input" style="width: 100%;">
+              <option value="Rapid MVP (1-2 Weeks)">Rapid MVP (1-2 Weeks)</option>
+              <option value="Standard Implementation (2-4 Weeks)" selected>Standard Implementation (2-4 Weeks)</option>
+              <option value="Flexible Iterative Development">Flexible Iterative Development</option>
+            </select>
+          </div>
+
+          <div class="w3-col l6 m12 w3-margin-bottom">
+            <label class="font-subheading text-neon-purple" style="display: block; margin-bottom: 8px;">Project Scope Level</label>
+            <select id="funnel-scope" name="scope" class="chat-input" style="width: 100%;">
+              <option value="Proof of Concept Prototype">Proof of Concept Prototype</option>
+              <option value="Production Web App / Agent Integration" selected>Production Web App / Agent Integration</option>
+              <option value="Enterprise Architecture & Data Ecosystem">Enterprise Architecture & Data Ecosystem</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Step 4: AI Skill Match & Generated Prompt Result -->
+    <div class="funnel-step" id="funnel-step-4">
+      <div class="cyber-card" style="padding: 32px; border-color: var(--neon-cyan);">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 20px;">
+          <div>
+            <h3 class="text-neon-cyan" style="margin: 0;"><i class="fa-solid fa-brain w3-margin-right"></i>Step 4: AI Skill Match & Generated Prompt</h3>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Matches your requirements against Andris Jancevskis's profile.</div>
+          </div>
+          <div>
+            <span class="cyber-tag text-neon-green" style="font-size: 1.1rem; padding: 6px 16px;" id="ai-match-score">
+              <i class="fa-solid fa-bolt w3-margin-right"></i>95% SKILL MATCH
+            </span>
+          </div>
+        </div>
+
+        <!-- Skill Compatibility Breakdown Grid -->
+        <div class="w3-row-padding" style="margin-bottom: 24px;" id="ai-match-breakdown">
+          <!-- Dynamically populated by funnel.js -->
+        </div>
+
+        <!-- Generated AI Prompt Text Box -->
+        <div style="margin-bottom: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <label class="font-subheading text-neon-magenta" style="font-size: 0.95rem;">
+              <i class="fa-solid fa-terminal w3-margin-right"></i>GENERATED AI EVALUATION PROMPT
+            </label>
+            <button type="button" id="copy-prompt-btn" class="cyber-btn-outline" style="padding: 4px 12px; font-size: 0.75rem;">
+              <i class="fa-solid fa-copy w3-margin-right"></i>Copy Prompt
+            </button>
+          </div>
+          <textarea id="generated-ai-prompt" rows="7" class="chat-input" style="width: 100%; font-family: monospace; font-size: 0.85rem; background: rgba(5,10,25,0.95); border-color: var(--neon-magenta);" readonly></textarea>
+        </div>
+
+        <!-- Direct Launch CTA to AI Agent Chat -->
+        <div class="cyber-card" style="padding: 20px; background: rgba(0, 243, 255, 0.08); border-color: var(--neon-cyan); text-align: center;">
+          <h4 class="text-neon-cyan" style="margin-bottom: 8px;">Evaluate Requirements in Cyber AI Agent Chat</h4>
+          <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 16px;">
+            Click below to pass this generated requirement prompt directly into the Cyber AI Bot chat for instant analysis and consultation.
+          </p>
+          <button type="button" id="launch-chat-btn" class="cyber-btn" style="padding: 12px 28px; font-size: 0.95rem;">
+            <i class="fa-solid fa-robot w3-margin-right"></i>Launch AI Agent Chat with Prompt <i class="fa-solid fa-arrow-right w3-margin-left"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Funnel Navigation Controls -->
+    <div style="display: flex; justify-content: space-between; margin-top: 24px;">
+      <button type="button" id="funnel-prev-btn" class="cyber-btn-outline" style="display: none;">
+        <i class="fa-solid fa-arrow-left w3-margin-right"></i>Previous Step
+      </button>
+
+      <div style="margin-left: auto;">
+        <button type="button" id="funnel-next-btn" class="cyber-btn">
+          Next Step <i class="fa-solid fa-arrow-right w3-margin-left"></i>
+        </button>
+
+        <button type="button" id="funnel-generate-btn" class="cyber-btn cyber-btn-magenta" style="display: none;">
+          <i class="fa-solid fa-wand-magic-sparkles w3-margin-right"></i>Generate AI Skill Match & Prompt
+        </button>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/funnel.js' %}"></script>
+{% endblock %}

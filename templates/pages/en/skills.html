@@ -1,0 +1,365 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Skills & Profile | Andris Jancevskis{% endblock %}
+
+{% block content %}
+<div class="w3-content w3-container" style="max-width: 1200px;">
+
+  <!-- Header Banner -->
+  <div class="cyber-card" style="padding: 36px 28px; margin-top: 20px; border-color: var(--neon-cyan);">
+    <div class="w3-row-padding" style="display: flex; align-items: center; flex-wrap: wrap;">
+      <div class="w3-col l8 m12">
+        <div class="cyber-tag text-neon-cyan"><i class="fa-solid fa-file-contract w3-margin-right"></i>PROFILE SUMMARY
+        </div>
+        <h1 style="font-size: 2.2rem; margin: 12px 0 6px;" class="text-neon-cyan">ANDRIS JANCEVSKIS</h1>
+        <div class="font-subheading text-neon-magenta" style="font-size: 1.1rem; margin-bottom: 12px;">
+          AI, Machine Learning and Software Development Studies Profile
+        </div>
+        <p class="text-muted" style="line-height: 1.6; font-size: 0.95rem;">
+          Computing graduate and experienced IT professional currently developing specialized capabilities in artificial
+          intelligence, machine learning, generative AI, AI agents, and AI-assisted application development.
+        </p>
+      </div>
+
+      <div class="w3-col l4 m12"
+        style="background: rgba(5, 10, 25, 0.8); padding: 18px; border-radius: 10px; border: 1px solid var(--border-neon);">
+        <div style="font-size: 0.85rem; color: var(--text-main);">
+          <div style="margin-bottom: 8px;"><i
+              class="fa-solid fa-location-dot text-neon-cyan w3-margin-right"></i>Burton-on-Trent, United Kingdom</div>
+          <div style="margin-bottom: 8px;"><i class="fa-solid fa-envelope text-neon-cyan w3-margin-right"></i><a
+              href="mailto:andris.jancevskis@gmail.com" class="text-neon-cyan"
+              style="text-decoration:none;">andris.jancevskis@gmail.com</a></div>
+          <div style="margin-bottom: 8px;"><i class="fa-solid fa-phone text-neon-cyan w3-margin-right"></i><a
+              href="tel:+447752194449" class="text-neon-cyan" style="text-decoration:none;">+44 7752 194449</a></div>
+          <div style="margin-top: 10px;"><span class="cyber-tag text-neon-green">Status: Active Learner &
+              Practitioner</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Study Priorities -->
+  <div class="cyber-card" style="padding: 28px; margin-top: 30px;">
+    <h3 class="text-neon-magenta"><i class="fa-solid fa-bullseye w3-margin-right"></i>Current Study Priorities</h3>
+    <div class="w3-row-padding" style="margin-top: 16px;">
+      <div class="w3-col l6 m12" style="font-size: 0.95rem; color: var(--text-main);">
+        <ul style="padding-left: 20px; line-height: 1.8;">
+          <li>Developing practical machine-learning skills with Python.</li>
+          <li>Data preparation, model training, validation, and evaluation.</li>
+          <li>Building AI-enabled and data-driven web applications.</li>
+          <li>Designing prompts, workflows, and tool use for generative AI systems.</li>
+        </ul>
+      </div>
+      <div class="w3-col l6 m12" style="font-size: 0.95rem; color: var(--text-main);">
+        <ul style="padding-left: 20px; line-height: 1.8;">
+          <li>Understanding AI-agent architecture and multi-step task execution.</li>
+          <li>Using AI-assisted development (Vibe Coding) to prototype software rapidly.</li>
+          <li>Connecting AI solutions with web applications, databases, and APIs.</li>
+          <li>Evaluating AI outputs, limitations, risks, and appropriate human oversight.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Skill Competency Map -->
+  <div style="margin-top: 40px;">
+    <div class="w3-center w3-margin-bottom">
+      <h2 class="text-neon-cyan"><i class="fa-solid fa-sliders w3-margin-right"></i>AI & ML COMPETENCY MAP</h2>
+      <p class="text-muted">Filter by domain to inspect technical capabilities and study status.</p>
+
+      <!-- Category Tags Filter -->
+      <div style="margin-top: 16px;">
+        <span class="cyber-tag skill-filter-tag active" data-filter="all">All Domains</span>
+        <span class="cyber-tag skill-filter-tag" data-filter="ai">AI & ML Fundamentals</span>
+        <span class="cyber-tag skill-filter-tag" data-filter="agents">AI Agents & Prompts</span>
+        <span class="cyber-tag skill-filter-tag" data-filter="data">Data & Analytics</span>
+        <span class="cyber-tag skill-filter-tag" data-filter="web">Web Engineering</span>
+        <span class="cyber-tag skill-filter-tag" data-filter="systems">Systems Analysis</span>
+      </div>
+    </div>
+
+    <div class="w3-row-padding" style="margin-top: 24px;">
+
+      <!-- Artificial Intelligence -->
+      <div class="w3-col l6 m12 w3-margin-bottom skill-card" data-category="ai">
+        <div class="cyber-card" style="padding: 24px; height: 100%;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 class="text-neon-cyan" style="margin: 0;">Artificial Intelligence</h4>
+            <span class="cyber-tag text-neon-green" style="font-size: 0.75rem;">Developing Practitioner</span>
+          </div>
+          <div class="cyber-progress-bg" style="margin-bottom: 14px;">
+            <div class="cyber-progress-bar" style="width: 82%;"></div>
+          </div>
+          <p class="text-muted" style="font-size: 0.88rem; line-height: 1.5;">
+            AI fundamentals, Generative AI, prompt engineering, human-in-the-loop workflows, responsible AI practice,
+            model evaluation, uncertainty verification.
+          </p>
+        </div>
+      </div>
+
+      <!-- Machine Learning -->
+      <div class="w3-col l6 m12 w3-margin-bottom skill-card" data-category="ai data">
+        <div class="cyber-card" style="padding: 24px; height: 100%;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 class="text-neon-magenta" style="margin: 0;">Machine Learning</h4>
+            <span class="cyber-tag text-neon-cyan" style="font-size: 0.75rem;">Under Active Development</span>
+          </div>
+          <div class="cyber-progress-bg" style="margin-bottom: 14px;">
+            <div class="cyber-progress-bar"
+              style="width: 78%; background: linear-gradient(90deg, var(--neon-magenta), var(--neon-purple));"></div>
+          </div>
+          <p class="text-muted" style="font-size: 0.88rem; line-height: 1.5;">
+            Problem framing, data preparation, EDA, regression, classification, training/validation metrics, model
+            comparison, overfitting awareness, neural network basics.
+          </p>
+        </div>
+      </div>
+
+      <!-- AI Agents & Workflows -->
+      <div class="w3-col l6 m12 w3-margin-bottom skill-card" data-category="agents ai">
+        <div class="cyber-card" style="padding: 24px; height: 100%;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 class="text-neon-green" style="margin: 0;">AI Agents & Workflows</h4>
+            <span class="cyber-tag text-neon-green" style="font-size: 0.75rem;">Formally Studied (2026)</span>
+          </div>
+          <div class="cyber-progress-bg" style="margin-bottom: 14px;">
+            <div class="cyber-progress-bar"
+              style="width: 88%; background: linear-gradient(90deg, var(--neon-green), var(--neon-cyan));"></div>
+          </div>
+          <p class="text-muted" style="font-size: 0.88rem; line-height: 1.5;">
+            Agent roles & goals, multi-step task decomposition, tool use, retrieval/knowledge bases, context/memory
+            management, API integration, guardrails.
+          </p>
+        </div>
+      </div>
+
+      <!-- Generative AI & Prompt Engineering -->
+      <div class="w3-col l6 m12 w3-margin-bottom skill-card" data-category="agents ai web">
+        <div class="cyber-card" style="padding: 24px; height: 100%;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 class="text-neon-purple" style="margin: 0;">Generative AI & Vibe Coding</h4>
+            <span class="cyber-tag text-neon-purple" style="font-size: 0.75rem;">Practical Capability</span>
+          </div>
+          <div class="cyber-progress-bg" style="margin-bottom: 14px;">
+            <div class="cyber-progress-bar"
+              style="width: 90%; background: linear-gradient(90deg, var(--neon-purple), var(--neon-magenta));"></div>
+          </div>
+          <p class="text-muted" style="font-size: 0.88rem; line-height: 1.5;">
+            System instructions, prompt structure, output format control, vibe coding, prompt-driven prototyping, human
+            oversight of generated software.
+          </p>
+        </div>
+      </div>
+
+      <!-- Data & Big Data Analytics -->
+      <div class="w3-col l6 m12 w3-margin-bottom skill-card" data-category="data">
+        <div class="cyber-card" style="padding: 24px; height: 100%;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 class="text-neon-amber" style="margin: 0;">Data & Big Data Analytics</h4>
+            <span class="cyber-tag text-neon-amber" style="font-size: 0.75rem;">Postgraduate Level</span>
+          </div>
+          <div class="cyber-progress-bg" style="margin-bottom: 14px;">
+            <div class="cyber-progress-bar"
+              style="width: 85%; background: linear-gradient(90deg, var(--neon-amber), var(--neon-green));"></div>
+          </div>
+          <p class="text-muted" style="font-size: 0.88rem; line-height: 1.5;">
+            Big data concepts, relational databases (PostgreSQL, Oracle, MySQL), SQL, analytical reasoning, data
+            transformation, statistical reporting.
+          </p>
+        </div>
+      </div>
+
+      <!-- AI Web Application Engineering -->
+      <div class="w3-col l6 m12 w3-margin-bottom skill-card" data-category="web systems">
+        <div class="cyber-card" style="padding: 24px; height: 100%;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 class="text-neon-cyan" style="margin: 0;">Web App Engineering</h4>
+            <span class="cyber-tag text-neon-cyan" style="font-size: 0.75rem;">Level 5 Diploma</span>
+          </div>
+          <div class="cyber-progress-bg" style="margin-bottom: 14px;">
+            <div class="cyber-progress-bar" style="width: 86%;"></div>
+          </div>
+          <p class="text-muted" style="font-size: 0.88rem; line-height: 1.5;">
+            Python, Django, FastAPI, SQL, HTML/CSS, RESTful APIs, database integration, responsive UX/UI, deployment
+            pipelines.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Education Timeline -->
+  <div style="margin-top: 40px;">
+    <h2 class="text-neon-magenta"><i class="fa-solid fa-graduation-cap w3-margin-right"></i>EDUCATION & CREDENTIALS</h2>
+
+    <div class="cyber-timeline" style="margin-top: 24px;">
+
+      <!-- AI/ML Developer -->
+      <div class="cyber-timeline-item">
+        <div class="cyber-card" style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <h4 class="text-neon-cyan" style="margin: 0;">AI/ML Developer — AI Institute</h4>
+            <span class="cyber-tag text-neon-green">Status: Current Studies</span>
+          </div>
+          <p class="text-muted" style="font-size: 0.9rem; margin-top: 8px;">
+            Focusing on Python for AI/ML, data cleaning, feature engineering, supervised & unsupervised learning
+            algorithms, model evaluation, and responsible deployment.
+          </p>
+        </div>
+      </div>
+
+      <!-- Vibe Coder -->
+      <div class="cyber-timeline-item">
+        <div class="cyber-card" style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <h4 class="text-neon-magenta" style="margin: 0;">Vibe Coder — univerus.ai</h4>
+            <span class="cyber-tag text-neon-green">Status: Current Studies</span>
+          </div>
+          <p class="text-muted" style="font-size: 0.9rem; margin-top: 8px;">
+            Studying AI-assisted software development through prompt instructions, rapid prototyping, code review, human
+            oversight, and iterative debugging.
+          </p>
+        </div>
+      </div>
+
+      <!-- AI Agents Developer -->
+      <div class="cyber-timeline-item">
+        <div class="cyber-card" style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <h4 class="text-neon-green" style="margin: 0;">AI Agents Developer — AI Institute</h4>
+            <span class="cyber-tag text-neon-cyan">Completed: 2026</span>
+          </div>
+          <p class="text-muted" style="font-size: 0.9rem; margin-top: 8px;">
+            Studied agent architectures, task decomposition, external tool invocation, retrieval-augmented knowledge
+            bases, guardrails, and automated workflow evaluation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Google AI Professional Certificate -->
+      <div class="cyber-timeline-item">
+        <div class="cyber-card" style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <h4 class="text-neon-purple" style="margin: 0;">Google AI Professional Certificate — Coursera</h4>
+            <span class="cyber-tag text-neon-cyan">Completed: 2026</span>
+          </div>
+          <p class="text-muted" style="font-size: 0.9rem; margin-top: 8px;">
+            Developing collaborator mindsets for AI instruction, high-impact workplace domain application, responsible
+            AI practice, content creation, and no-code vibe coding.
+          </p>
+        </div>
+      </div>
+
+      <!-- PgDip Computer Science with Big Data -->
+      <div class="cyber-timeline-item">
+        <div class="cyber-card" style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <h4 class="text-neon-amber" style="margin: 0;">Postgraduate Diploma in Computer Science with Big Data
+              Analytics</h4>
+            <span class="cyber-tag text-neon-amber">Awarded: 2023 | Wrexham Glyndwr University</span>
+          </div>
+          <p class="text-muted" style="font-size: 0.9rem; margin-top: 8px;">
+            Big data architectures, analytical & statistical reasoning, databases, independent technical research,
+            problem formulation, and method evaluation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Level 5 Web App Dev -->
+      <div class="cyber-timeline-item">
+        <div class="cyber-card" style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <h4 class="text-neon-cyan" style="margin: 0;">Level 5 Diploma in Web Application Development — Code
+              Institute</h4>
+            <span class="cyber-tag text-neon-cyan">Completed: 2026</span>
+          </div>
+          <p class="text-muted" style="font-size: 0.9rem; margin-top: 8px;">
+            Full-stack Python & Django web development, HTML/CSS, JavaScript, relational data modelling, SQL,
+            authentication, and application deployment.
+          </p>
+        </div>
+      </div>
+
+      <!-- BSc Computing & IT -->
+      <div class="cyber-timeline-item">
+        <div class="cyber-card" style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <h4 class="text-neon-magenta" style="margin: 0;">BSc (Hons) Computing and IT (Software) — The Open
+              University</h4>
+            <span class="cyber-tag text-neon-magenta">Awarded: 2019</span>
+          </div>
+          <p class="text-muted" style="font-size: 0.9rem; margin-top: 8px;">
+            Software engineering, object-oriented programming, algorithms & data structures, requirements analysis,
+            system design, and technology evaluation.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Professional Systems Analysis & Operational Foundation -->
+  <div class="cyber-card" style="padding: 28px; margin-top: 40px; border-color: var(--neon-cyan);">
+    <h3 class="text-neon-cyan"><i class="fa-solid fa-warehouse w3-margin-right"></i>Operational & Systems Analysis
+      Foundation</h3>
+    <p class="text-muted" style="line-height: 1.6;">
+      Prior experience as Programmer, Systems Analyst, and Business Analyst provides a strong, practical bridge between
+      raw technology and real-world implementation:
+    </p>
+    <div class="w3-row-padding" style="margin-top: 16px;">
+      <div class="w3-col l4 m12 w3-margin-bottom">
+        <div
+          style="background: rgba(5,10,25,0.7); padding: 16px; border-radius: 8px; border: 1px solid rgba(0,243,255,0.2);">
+          <h5 class="text-neon-cyan"><i class="fa-solid fa-diagram-next w3-margin-right"></i>Systems Analysis</h5>
+          <p class="text-muted" style="font-size: 0.85rem;">
+            Requirements elicitation, workflow analysis, translating business needs into technical specifications, and
+            stakeholder communication.
+          </p>
+        </div>
+      </div>
+      <div class="w3-col l4 m12 w3-margin-bottom">
+        <div
+          style="background: rgba(5,10,25,0.7); padding: 16px; border-radius: 8px; border: 1px solid rgba(255,0,127,0.2);">
+          <h5 class="text-neon-magenta"><i class="fa-solid fa-boxes-stacked w3-margin-right"></i>Warehouse Operations
+          </h5>
+          <p class="text-muted" style="font-size: 0.85rem;">
+            Direct understanding of WMS systems, inbound/inventory/despatch workflows, stock accuracy, and operational
+            exception handling.
+          </p>
+        </div>
+      </div>
+      <div class="w3-col l4 m12 w3-margin-bottom">
+        <div
+          style="background: rgba(5,10,25,0.7); padding: 16px; border-radius: 8px; border: 1px solid rgba(0,255,153,0.2);">
+          <h5 class="text-neon-green"><i class="fa-solid fa-database w3-margin-right"></i>Data & Process Engineering</h5>
+          <p class="text-muted" style="font-size: 0.85rem;">
+            Data preparation, relational modelling, and connecting technical features to practical operational outcomes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Evidence Disclosure Accordion -->
+  <div class="cyber-card"
+    style="padding: 20px; margin-top: 30px; background: rgba(5,7,14,0.95); border: 1px dashed var(--neon-cyan);">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <span class="font-subheading text-neon-cyan" style="font-size: 0.9rem;">
+        <i class="fa-solid fa-shield-halved w3-margin-right"></i>EVIDENCE & POSITIONING DISCLOSURE
+      </span>
+      <span class="text-muted" style="font-size: 0.8rem;">Profile Verification Rules</span>
+    </div>
+    <p class="text-muted" style="font-size: 0.82rem; margin-top: 10px; line-height: 1.5;">
+      • Programme names, institutions, and completion years are confirmed CV facts.<br>
+      • AI/ML Developer & Vibe Coder competencies are described as <em>being developed</em> during current active
+      study.<br>
+      • Wrexham Glyndwr University qualification is correctly recorded as a <strong>Postgraduate Diploma
+        (PgDip)</strong>.<br>
+      • Systems and domain experience represent a solid engineering foundation for AI work.
+    </p>
+  </div>
+
+</div>
+{% endblock %}
